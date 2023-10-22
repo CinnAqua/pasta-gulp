@@ -28,31 +28,8 @@ function compilaSass() {
         .pipe(gulp.dest('./build/styles'));
 }
 
-// exports.default = gulp.parallel(funcaoPadrao, dizOi);
-// exports.dizOi = dizOi;
-// exports.sass = compilaSass;
 exports.default = function() {
     gulp.watch('./source/styles/*.scss', {ignoreInitial: false}, gulp.series(compilaSass))
     gulp.watch('./source/styles/*.js', {ignoreInitial: false}, gulp.series(comprimeJavaScript))
     gulp.watch('./source/styles/*', {ignoreInitial: false}, gulp.series(comprimeImagens))
 };
-// exports.javascript = comprimeJavaScript;
-// exports.images = comprimeImagens;
-
-
-// function funcaoPadrao(callback) {
-//     setTimeout(function() {
-//         console.log("Executando via Gulp");
-//         callback();
-//     }, 2000)
-// }
-
-// function dizOi(callback) {
-//     console.log("Olá Gulp");
-//     dizTchau();
-//     callback();
-// }
-
-// function dizTchau() {
-//     console.log("Tchau Gulp");
-// }
